@@ -1,5 +1,6 @@
-1. Classification
+
 # Introduction
+## 1. Classification (using Logistic classfication)
 In this small project, **classification** using **big data** tool (e. g., **pyspark**) is deployed. The data for exploration and classification is derived from the very popular source. [cencus income dataset from UCI machine learning](https://archive.ics.uci.edu/ml/machine-learning-databases/adult/)
 - The google colab is used to implement to classification. Then, in the first part, the pyspark with **hadoop** is setup on the google cloud.
 - In the second part, data is reading using pyspark as a dataframe that is then used to explore features and analyse by using **logistic classification**. There are two parts of data, the train data and test data that are consistent and representative. 
@@ -10,4 +11,4 @@ In this small project, **classification** using **big data** tool (e. g., **pysp
 - In addition, evaluation step is used to confirm the effectiveness of our classification about the data. Because two classes from the train data is **balance class** with the ratio (40% and 60% for each class), then **accuracy** metric is chosen to evaluate the classification performance. And the logistic classification gave **accuracy = 81%** as compared to the optimal **accucary = 85%** from the author of this dataset. see in the file 'data/adult.names'. Furthermore, the ROC is used to compute the are under the curve, with area 89% very closed to 100%.
 - Last step, in order to tune the hyperparameter, the **GridSeaerch** combined with **crossvalidator** are used to find the best hyperparameter for regularization. And the best value is obtained with regularization hyperparameter is 0.01 with accuracy is closed to 84%.        
  
-2. 
+## 2. Anamoly detection (using Kmeans clusters) 
