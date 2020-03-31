@@ -12,7 +12,6 @@ In this small project, **classification** using **big data** tool (e. g., **pysp
 - Last step, in order to tune the hyperparameter, the **GridSeaerch** combined with **crossvalidator** are used to find the best hyperparameter for regularization. And the best value is obtained with regularization hyperparameter is 0.01 with accuracy is closed to 84%.        
  
 ## 2. Anamoly detection (using Kmeans clusters) 
-# Introduction
 In this small task, **clustering KMeans** using **big data** tool (e. g., **pyspark**) is deployed. The data for exploration and classification is derived from the very popular source. [data from kddcup99](http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html).
 
 - In the first step, the data with 41 attributes are read. Most of the data are double type except 3 attributes are String type. **SparkContext** method are used to read and parse each line into 41 attributes under **Resilient Distributed Dataset**. Then data is converted to again dataframe due to the nominal categorical features that the algorithms can not understand. 
