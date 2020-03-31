@@ -1,1 +1,13 @@
-# pyspark
+1. Classification
+# Introduction
+In this small project, **classification** using **big data** tool (e. g., **pyspark**) is deployed. The data for exploration and classification is derived from the very popular source. [cencus income dataset from UCI machine learning](https://archive.ics.uci.edu/ml/machine-learning-databases/adult/)
+- The google colab is used to implement to classification. Then, in the first part, the pyspark with **hadoop** is setup on the google cloud.
+- In the second part, data is reading using pyspark as a dataframe that is then used to explore features and analyse by using **logistic classification**. There are two parts of data, the train data and test data that are consistent and representative. 
+- Data obtained in the previous step will explore to see how relevant between features. 
+- Data indeed are either continuous or categorical. Then, in order to be used as input of classifier, those data need to be converted into numerical so that the classifier can understand. **StringIndexer** and **OneHotEncoderEstimator** are used to convert **nominal categorical features** into the understandable format.
+- The **Pipeline process** has been deploy to reduce the manually repeated the same process over time. Indeed, there are many categorical features need to be indexed and converted to numerical format, and **VectorAssembler** is used to combine all necessary features as a single feature to be inputted into classifier.
+- Next step, The **logistic classification** is utilized to sucessfully classify observations from dataset into correct class. In this small project, there are only two classes, income higher than 50K and less than 50K. The classifier is set so that its hyperparameter **regularization parameter** is equal to 0.2, this a a random value to set and is tuned later to get the optimal value for this hyper parameter. 
+- In addition, evaluation step is used to confirm the effectiveness of our classification about the data. Because two classes from the train data is **balance class** with the ratio (40% and 60% for each class), then **accuracy** metric is chosen to evaluate the classification performance. And the logistic classification gave **accuracy = 81%** as compared to the optimal **accucary = 85%** from the author of this dataset. see in the file 'data/adult.names'. Furthermore, the ROC is used to compute the are under the curve, with area 89% very closed to 100%.
+- Last step, in order to tune the hyperparameter, the **GridSeaerch** combined with **crossvalidator** are used to find the best hyperparameter for regularization. And the best value is obtained with regularization hyperparameter is 0.01 with accuracy is closed to 84%.        
+ 
+2. 
