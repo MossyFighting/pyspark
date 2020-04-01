@@ -19,3 +19,17 @@ In this small task, **clustering KMeans** using **big data** tool (e. g., **pysp
 - The **anomaly dection** means that the data or observations that are different from normal or what we expected. By doing that, statistic method flags the data as 'bad' or 'malicious' when the data behave five times different from the mean of all training data. This method acts on univariate outliers, it is easy to do but it is not really robust because it required the parameters about the distribution, like mean and standard deviation, and it also assumes that the model is normal. In addition, To obtain the **mean** and the **standard deviation**, the **Stats()** funtion is acted on the RDD. However, univariate outliers are not efficient in reality because, multiple actions are often considered to access normal or obnormal. Then, the multivariate should be used, for the sake of the simplicity we do not mention it in this small task.
 - Instead, the **Kmeans** is used to visualize the outliers. To verify the dependence of the Kmeans on the data. There are two steps have been done to compare how sensitive KMeans to data. In the first case, the data is not standardized, mean that just use the data with different distribution for all features and let KMeans find the outliers. In the other case, all the features are standardized to ensure that they have the same distribution, indded all the features data are subtracted for their mean and divided by their standard deviation.
 - The results show that, for the data without standardize, the KMeans recognizes so many outliers, more than 1000 in cluser 0 and cluster 2. However, when standardizing the data according to all input features, the KMeans gave us only one outliers in cluster 2.  
+
+## 3. Recommendations using ALS
+
+In this small task of recommendation, the dataset is obtained from [dataset for recommendation](https://grouplens.org/datasets/movielens/).
+
+Recommendation is useful to help both provider and consumer to maximize provider's profits or user's knowledge/exploration, and this technique is very popular in big data processing with huge dataset.
+
+In this small task, we will go through following steps based on the idea of matrix factorization [here](https://dl.acm.org/doi/10.1109/MC.2009.263) and collaborative filtering [here](https://ieeexplore.ieee.org/document/4781121).
+- load the dataset and processing 
+- exploration dataset to find some intuitations about the dataset
+- train Alternative Least Square model for recommendation
+- make recommendation for the most active user
+- evaluation the trained model on test dataset based on metrics rmse, mae. (root mean square error and mean absolute error).
+- some conclusions.  
